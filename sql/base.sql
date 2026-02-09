@@ -1,0 +1,12 @@
+CREATE DATABASE Echange;
+USE Echange;
+CREATE OR REPLACE TABLE user(
+    idUser INT PRIMARY KEY AUTO_INCREMENT,
+    nomUser VARCHAR(100),
+    prenomUser VARCHAR(100),
+    motDePasseUser VARCHAR(20)
+);
+CREATE OR REPLACE TABLE statut(
+    idStatut INT PRIMARY KEY AUTO_INCREMENT,
+    nomStatut VARCHAR(100)
+);
