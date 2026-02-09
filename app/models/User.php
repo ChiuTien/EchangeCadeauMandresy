@@ -3,37 +3,37 @@
 
     class User {
     //Attributs
-        private $id;
-        private $nom;
-        private $prenom;
-        private $motDePasse;
+        private $idUser;
+        private $nomUser;
+        private $prenomUser;
+        private $motDePasseUser;
     //Constructeur
         public function __construct() {}
     //Setters
-        public function setId($id) {
-            $this->id = $id;
+        public function setIdUser($id) {
+            $this->idUser = $id;
         }
-        public function setNom($nom) {
-            $this->nom = $nom;
+        public function setNomUser($nom) {
+            $this->nomUser = $nom;
         }
-        public function setPrenom($prenom) {
-            $this->prenom = $prenom;
+        public function setPrenomUser($prenom) {
+            $this->prenomUser = $prenom;
         }
-        public function setMotDePasse($motDePasse) {
-            $this->motDePasse = $motDePasse;
+        public function setMotDePasseUser($motDePasse) {
+            $this->motDePasseUser = $motDePasse;
         }
     //Getters
-        public function getId() {
-            return $this->id;
+        public function getIdUser() {
+            return $this->idUser;
         }
-        public function getNom() {
-            return $this->nom;
+        public function getNomUser() {
+            return $this->nomUser;
         }
-        public function getPrenom() {
-            return $this->prenom;
+        public function getPrenomUser() {
+            return $this->prenomUser;
         }
-        public function getMotDePasse() {
-            return $this->motDePasse;
+        public function getMotDePasseUser() {
+            return $this->motDePasseUser;
         }
     };
 ?>
