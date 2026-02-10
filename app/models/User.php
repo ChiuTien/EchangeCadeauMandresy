@@ -19,8 +19,8 @@
         public function setPrenomUser($prenom) {
             $this->prenomUser = $prenom;
         }
-        public function setMotDePasseUser($motDePasse) {
-            $this->motDePasseUser = $motDePasse;
+        public function setMdpUser($mdp) {
+            $this->motDePasseUser = $mdp;
         }
     //Getters
         public function getIdUser() {
@@ -32,7 +32,7 @@
         public function getPrenomUser() {
             return $this->prenomUser;
         }
-        public function getMotDePasseUser() {
+        public function getMdpUser() {
             return $this->motDePasseUser;
         }
     };
