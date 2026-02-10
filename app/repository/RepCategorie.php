@@ -1,7 +1,7 @@
 <?php 
     namespace app\repository;
     
-    use app\model\Categorie;
+    use app\models\Categorie;
     use Flight;
     use PDO;    
 
