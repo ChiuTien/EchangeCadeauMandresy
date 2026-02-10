@@ -16,6 +16,9 @@ $router->group('', function(Router $router) use ($app) {
 	$router->get('/', function() use ($app) {
 		$app->render('login');
 	});
+	$router->get('/inscription',function() use ($app) {
+		$app->render('inscription');
+	});
 
 	$router->get('/hello-world/@name', function($name) {
 		echo '<h1>Hello world! Oh hey '.$name.'!</h1>';
