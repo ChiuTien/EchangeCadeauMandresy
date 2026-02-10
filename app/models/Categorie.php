@@ -4,22 +4,22 @@
     class Categorie {
     //Attributs
         private $idCategorie;
-        private $nomCategorie;
+        private $valCategorie;
     //Constructeur
         public function __construct() {}
     //Setters
         public function setIdCategorie($id) {
             $this->idCategorie = $id;
         }
-        public function setNomCategorie($nom) {
-            $this->nomCategorie = $nom;
+        public function setValCategorie($val) {
+            $this->valCategorie = $val;
         }
     //Getters
         public function getIdCategorie() {
             return $this->idCategorie;
         }
-        public function getNomCategorie() {
-            return $this->nomCategorie;
+        public function getValCategorie() {
+            return $this->valCategorie;
         }
     };
 ?>
