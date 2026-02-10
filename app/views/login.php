@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Serpentard</title>
-    <!-- Bootstrap 5 CSS -->
+    <!-- Bootstrap 5 CSS (inclut ses propres icônes) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --serpentard-dark: #1a472a;
@@ -30,6 +28,42 @@
             align-items: center;
             position: relative;
             overflow-x: hidden;
+        }
+        
+        /* Icônes personnalisées (remplacement Font Awesome) */
+        .icon-user::before {
+            content: "👤";
+            margin-right: 8px;
+        }
+        
+        .icon-key::before {
+            content: "🔑";
+            margin-right: 8px;
+        }
+        
+        .icon-login::before {
+            content: "🚪";
+            margin-right: 8px;
+        }
+        
+        .icon-eye::before {
+            content: "👁️";
+        }
+        
+        .icon-eye-slash::before {
+            content: "🙈";
+        }
+        
+        .icon-wizard::before {
+            content: "⚡";
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        .icon-check::before {
+            content: "✅";
+            margin-right: 8px;
         }
         
         /* Effet de serpent qui serpente en arrière-plan */
@@ -145,6 +179,11 @@
             background-color: rgba(26, 71, 42, 0.4);
             border: 1px solid var(--serpentard-medium);
             color: var(--serpentard-silver);
+            cursor: pointer;
+        }
+        
+        .input-group-text:hover {
+            background-color: rgba(42, 98, 61, 0.4);
         }
         
         .btn-serpentard {
@@ -192,15 +231,6 @@
             text-decoration: underline;
         }
         
-        .password-toggle {
-            cursor: pointer;
-            color: var(--serpentard-silver);
-        }
-        
-        .password-toggle:hover {
-            color: white;
-        }
-        
         /* Animation serpent */
         @keyframes snakeMove {
             0% { transform: translateX(-100px) rotate(45deg); }
@@ -236,7 +266,7 @@
                 <div class="login-container">
                     <div class="serpentard-header">
                         <div class="serpentard-logo">
-                            <i class="fas fa-hat-wizard"></i>
+                            <span class="icon-wizard"></span>
                         </div>
                         <h1 class="serpentard-title">Salon Serpentard</h1>
                         <p class="serpentard-subtitle">"Quiconque possède l'ambition trouvera sa place ici"</p>
@@ -245,19 +275,19 @@
                     <form id="loginForm">
                         <div class="mb-3">
                             <label for="username" class="form-label">
-                                <i class="fas fa-user me-2"></i>Nom d'utilisateur
+                                <span class="icon-user"></span>Nom d'utilisateur
                             </label>
                             <input type="text" class="form-control" id="username" placeholder="Entrez votre nom d'utilisateur" required>
                         </div>
                         
                         <div class="mb-4">
                             <label for="password" class="form-label">
-                                <i class="fas fa-key me-2"></i>Mot de passe
+                                <span class="icon-key"></span>Mot de passe
                             </label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
-                                <span class="input-group-text password-toggle" id="togglePassword">
-                                    <i class="fas fa-eye"></i>
+                                <span class="input-group-text" id="togglePassword">
+                                    <span class="icon-eye"></span>
                                 </span>
                             </div>
                             <div class="text-end mt-2">
@@ -266,12 +296,12 @@
                         </div>
                         
                         <button type="submit" class="btn btn-serpentard mb-3">
-                            <i class="fas fa-sign-in-alt me-2"></i>Se connecter
+                            <span class="icon-login"></span>Se connecter
                         </button>
                         
                         <div class="login-footer">
                             <p>Première visite à la Salle sur Demande ? <a href="#" class="forgot-password">Demandez l'accès au Préfet</a></p>
-                            <p class="mb-0 mt-2"><small>© Slytherin Common Room - Poudlard</small></p>
+                            <p class="mb-0 mt-2"><small>© Salle commune Serpentard - Poudlard</small></p>
                         </div>
                     </form>
                 </div>
@@ -286,16 +316,14 @@
         // Fonction pour afficher/masquer le mot de passe
         document.getElementById('togglePassword').addEventListener('click', function() {
             const passwordInput = document.getElementById('password');
-            const icon = this.querySelector('i');
+            const icon = this.querySelector('span');
             
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
+                icon.className = 'icon-eye-slash';
             } else {
                 passwordInput.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
+                icon.className = 'icon-eye';
             }
         });
         
@@ -312,7 +340,7 @@
                 const submitBtn = document.querySelector('.btn-serpentard');
                 const originalText = submitBtn.innerHTML;
                 
-                submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Connexion réussie';
+                submitBtn.innerHTML = '<span class="icon-check"></span>Connexion réussie';
                 submitBtn.style.background = 'linear-gradient(to bottom, #2a623d, #1a472a)';
                 
                 setTimeout(() => {
@@ -325,6 +353,25 @@
             } else {
                 alert('Veuillez remplir tous les champs.');
             }
+        });
+        
+        // Petit effet de frappe pour le titre
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.serpentard-title');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            };
+            
+            // Démarrer l'animation après un délai
+            setTimeout(typeWriter, 500);
         });
     </script>
 </body>
