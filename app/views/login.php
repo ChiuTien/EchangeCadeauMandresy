@@ -4,26 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - Serpentard</title>
+    <title>Connexion - Portail</title>
     <!-- Bootstrap 5 CSS (inclut ses propres icônes) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --serpentard-dark: #1a472a;
-            --serpentard-medium: #2a623d;
-            --serpentard-light: #5d5d5d;
-            --serpentard-silver: #aaaaaa;
-            --serpentard-green: #2a623d;
-            --serpentard-green-light: rgba(42, 98, 61, 0.1);
+            --ink: #0f172a;
+            --muted: #475569;
+            --line: #e2e8f0;
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --accent: #1f4b8f;
+            --accent-strong: #0b3b7a;
+            --accent-soft: rgba(31, 75, 143, 0.12);
         }
         
         body {
-            background-color: #0d1f0d;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(26, 71, 42, 0.2) 0%, transparent 20%),
-                radial-gradient(circle at 80% 80%, rgba(42, 98, 61, 0.1) 0%, transparent 20%);
-            font-family: 'Georgia', serif;
-            color: var(--serpentard-silver);
+            background-color: #eef2f7;
+            background-image:
+                radial-gradient(circle at 20% 15%, rgba(31, 75, 143, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(15, 23, 42, 0.08) 0%, transparent 30%),
+                linear-gradient(135deg, #f8fafc, #e8eef6 55%, #f1f5f9);
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--ink);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -32,83 +35,25 @@
             overflow-x: hidden;
         }
         
-        /* Icônes personnalisées (remplacement Font Awesome) */
-        .icon-user::before {
-            content: "👤";
-            margin-right: 8px;
-        }
-        
-        .icon-key::before {
-            content: "🔑";
-            margin-right: 8px;
-        }
-        
-        .icon-login::before {
-            content: "🚪";
-            margin-right: 8px;
-        }
-        
-        .icon-eye::before {
-            content: "👁️";
-        }
-        
-        .icon-eye-slash::before {
-            content: "🙈";
-        }
-        
-        .icon-wizard::before {
-            content: "⚡";
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 1rem;
-        }
-        
+        .icon-user::before,
+        .icon-key::before,
+        .icon-login::before,
+        .icon-eye::before,
+        .icon-eye-slash::before,
+        .icon-wizard::before,
         .icon-check::before {
-            content: "✅";
-            margin-right: 8px;
-        }
-        
-        /* Effet de serpent qui serpente en arrière-plan */
-        .snake-decoration {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-        
-        .snake-path {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 2px solid rgba(42, 98, 61, 0.2);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            transform: rotate(45deg);
-            top: -100px;
-            right: -100px;
-        }
-        
-        .snake-path:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            top: 50%;
-            left: -80px;
-            border-color: rgba(170, 170, 170, 0.15);
+            content: '';
         }
         
         .login-container {
-            background-color: rgba(13, 31, 13, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7),
-                        0 0 0 1px rgba(42, 98, 61, 0.3),
-                        0 0 20px rgba(42, 98, 61, 0.2) inset;
-            padding: 2.5rem;
+            background-color: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12),
+                        0 0 0 1px rgba(148, 163, 184, 0.35);
+            padding: 2.75rem;
             position: relative;
             z-index: 1;
-            border: 1px solid var(--serpentard-medium);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             overflow: hidden;
         }
         
@@ -119,7 +64,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--serpentard-dark), var(--serpentard-silver), var(--serpentard-dark));
+            background: linear-gradient(90deg, var(--accent-strong), var(--accent), #60a5fa);
         }
         
         .serpentard-header {
@@ -128,84 +73,78 @@
         }
         
         .serpentard-title {
-            color: var(--serpentard-silver);
-            font-size: 2.2rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            color: var(--ink);
+            font-family: 'Merriweather', 'Times New Roman', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px rgba(170, 170, 170, 0.5);
         }
         
         .serpentard-subtitle {
-            color: var(--serpentard-medium);
-            font-style: italic;
-            font-size: 1.1rem;
+            color: var(--muted);
+            font-size: 1rem;
             margin-bottom: 1.5rem;
         }
         
         .serpentard-logo {
-            font-size: 3rem;
-            color: var(--serpentard-green);
-            margin-bottom: 1rem;
-            text-shadow: 0 0 10px rgba(42, 98, 61, 0.5);
+            display: none;
         }
         
         .form-label {
-            color: var(--serpentard-silver);
+            color: var(--ink);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
         
         .form-control {
-            background-color: rgba(26, 71, 42, 0.2);
-            border: 1px solid var(--serpentard-medium);
-            color: var(--serpentard-silver);
+            background-color: var(--surface-alt);
+            border: 1px solid var(--line);
+            color: var(--ink);
             padding: 0.75rem 1rem;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: all 0.3s;
         }
         
         .form-control:focus {
-            background-color: rgba(42, 98, 61, 0.2);
-            border-color: var(--serpentard-silver);
-            box-shadow: 0 0 0 0.25rem rgba(42, 98, 61, 0.25);
-            color: white;
+            background-color: #ffffff;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.2rem var(--accent-soft);
+            color: var(--ink);
         }
         
         .form-control::placeholder {
-            color: #6c757d;
+            color: rgba(71, 85, 105, 0.6);
         }
         
         .input-group-text {
-            background-color: rgba(26, 71, 42, 0.4);
-            border: 1px solid var(--serpentard-medium);
-            color: var(--serpentard-silver);
+            background-color: #eef2f7;
+            border: 1px solid var(--line);
+            color: var(--muted);
             cursor: pointer;
         }
         
         .input-group-text:hover {
-            background-color: rgba(42, 98, 61, 0.4);
+            background-color: #e2e8f0;
         }
         
         .btn-serpentard {
-            background: linear-gradient(to bottom, var(--serpentard-medium), var(--serpentard-dark));
-            color: var(--serpentard-silver);
-            border: 1px solid var(--serpentard-green);
-            padding: 0.75rem 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border-radius: 8px;
+            background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+            color: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.2);
+            padding: 0.85rem 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border-radius: 10px;
             transition: all 0.3s;
             width: 100%;
-            text-transform: uppercase;
         }
         
         .btn-serpentard:hover {
-            background: linear-gradient(to bottom, var(--serpentard-green), var(--serpentard-medium));
-            color: white;
-            border-color: var(--serpentard-silver);
-            box-shadow: 0 0 15px rgba(42, 98, 61, 0.5);
+            background: linear-gradient(180deg, #2b5fb3, var(--accent));
+            color: #ffffff;
+            border-color: rgba(15, 23, 42, 0.25);
+            box-shadow: 0 16px 30px rgba(31, 75, 143, 0.25);
             transform: translateY(-2px);
         }
         
@@ -217,30 +156,20 @@
             text-align: center;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(42, 98, 61, 0.3);
-            color: var(--serpentard-light);
+            border-top: 1px solid var(--line);
+            color: var(--muted);
             font-size: 0.9rem;
         }
         
         .forgot-password {
-            color: var(--serpentard-silver);
+            color: var(--accent);
             text-decoration: none;
             transition: color 0.3s;
         }
         
         .forgot-password:hover {
-            color: white;
+            color: var(--accent-strong);
             text-decoration: underline;
-        }
-        
-        /* Animation serpent */
-        @keyframes snakeMove {
-            0% { transform: translateX(-100px) rotate(45deg); }
-            100% { transform: translateX(100px) rotate(45deg); }
-        }
-        
-        .snake-path {
-            animation: snakeMove 20s infinite alternate ease-in-out;
         }
         
         /* Responsive */
@@ -257,22 +186,14 @@
 </head>
 
 <body>
-    <!-- Décorations serpentard -->
-    <div class="snake-decoration">
-        <div class="snake-path"></div>
-        <div class="snake-path"></div>
-    </div>
-    
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-5">
                 <div class="login-container">
                     <div class="serpentard-header">
-                        <div class="serpentard-logo">
-                            <span class="icon-wizard"></span>
-                        </div>
-                        <h1 class="serpentard-title">Salon Serpentard</h1>
-                        <p class="serpentard-subtitle">"Quiconque possède l'ambition trouvera sa place ici"</p>
+                        <div class="serpentard-logo"></div>
+                        <h1 class="serpentard-title">Acces au portail</h1>
+                        <p class="serpentard-subtitle">Entrez vos identifiants pour continuer.</p>
                     </div>
                     
                     <form id="loginForm">
@@ -294,17 +215,17 @@
                                 </span>
                             </div>
                             <div class="text-end mt-2">
-                                <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                                <a href="#" class="forgot-password">Mot de passe oublie ?</a>
                             </div>
                         </div>
                         
                         <button type="submit" class="btn btn-serpentard mb-3">
-                            <span class="icon-login"></span>Se connecter
+                            Se connecter
                         </button>
                         
                         <div class="login-footer">
-                            <p>Première visite à la Salle sur Demande ? <a href="#" class="forgot-password">Demandez l'accès au Préfet</a></p>
-                            <p class="mb-0 mt-2"><small>© Salle commune Serpentard - Poudlard</small></p>
+                            <p>Pas encore de compte ? <a href="#" class="forgot-password">Contacter l'administrateur</a></p>
+                            <p class="mb-0 mt-2"><small>© Portail interne - 2026</small></p>
                         </div>
                     </form>
                 </div>
@@ -343,15 +264,15 @@
                 const submitBtn = document.querySelector('.btn-serpentard');
                 const originalText = submitBtn.innerHTML;
                 
-                submitBtn.innerHTML = '<span class="icon-check"></span>Connexion réussie';
-                submitBtn.style.background = 'linear-gradient(to bottom, #2a623d, #1a472a)';
+                submitBtn.innerHTML = 'Connexion reussie';
+                submitBtn.style.background = 'linear-gradient(180deg, #2f6f4e, #24553d)';
                 
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.style.background = '';
                     
                     // Ici, vous pourriez rediriger l'utilisateur ou faire une requête AJAX
-                    alert(`Bienvenue ${username} ! Accès au salon Serpentard accordé.`);
+                    alert(`Bienvenue ${username} ! Connexion reussie.`);
                 }, 1500);
             } else {
                 alert('Veuillez remplir tous les champs.');
