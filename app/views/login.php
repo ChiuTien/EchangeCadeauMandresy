@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +27,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             overflow-x: hidden;
         }
@@ -253,6 +255,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Décorations serpentard -->
     <div class="snake-decoration">
