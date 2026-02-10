@@ -96,6 +96,18 @@
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
+
+        .form-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
         
         .form-control {
             background-color: var(--surface-alt);
@@ -196,24 +208,19 @@
                         <p class="serpentard-subtitle">Entrez vos identifiants pour continuer.</p>
                     </div>
                     
-                    <form id="loginForm">
-                        <div class="mb-3">
+                    <form id="loginForm" method="post" action="accueil" class="form-stack">
+                        <div class="form-field">
                             <label for="username" class="form-label">
                                 <span class="icon-user"></span>Nom d'utilisateur
                             </label>
                             <input type="text" class="form-control" id="username" placeholder="Entrez votre nom d'utilisateur" required>
                         </div>
                         
-                        <div class="mb-4">
+                        <div class="form-field">
                             <label for="password" class="form-label">
                                 <span class="icon-key"></span>Mot de passe
                             </label>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
-                                <span class="input-group-text" id="togglePassword">
-                                    <span class="icon-eye"></span>
-                                </span>
-                            </div>
+                            <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
                             <div class="text-end mt-2">
                                 <a href="#" class="forgot-password">Mot de passe oublie ?</a>
                             </div>
