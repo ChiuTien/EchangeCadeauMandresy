@@ -231,7 +231,7 @@
                         </button>
                         
                         <div class="login-footer">
-                            <p>Pas encore de compte ? <a href="#" class="forgot-password">Contacter l'administrateur</a></p>
+                            <p>Pas encore de compte ? <a href="#" class="forgot-password">Inscription</a></p>
                             <p class="mb-0 mt-2"><small>© Portail interne - 2026</small></p>
                         </div>
                     </form>
