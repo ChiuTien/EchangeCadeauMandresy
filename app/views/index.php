@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 $page_title = "Accueil";
 $active_page = "home";
 $page_js = "home.js";

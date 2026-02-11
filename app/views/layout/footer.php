@@ -36,7 +36,7 @@
                     <h5 class="text-warning">Membres du projet</h5>
                     <div class="bg-dark bg-opacity-50 p-3 rounded">
                         <p class="mb-1 text-light-50">
-                            <strong><?= PROJECT_NAME ?></strong>
+                            <strong>Takalo takalo</strong>
                         </p>
                         <p class="mb-1">
                             <span class="text-warning">Étudiants:</span><br>

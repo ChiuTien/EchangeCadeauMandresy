@@ -14,8 +14,11 @@ use flight\net\Router;
 $router->group('', function(Router $router) use ($app) {
 
 	$router->get('/', function() use ($app) {
-		$app->render('login');
+		$app->render('index');
 	});
+
+	
+
 	$router->get('/inscription',function() use ($app) {
 		$app->render('inscription');
 	});

@@ -1,8 +1,8 @@
 <?php
 // Assurez-vous que BASE_URL est défini
-if (!defined('BASE_URL')) {
-    require_once __DIR__ . '/../config/constants.php';
-}
+// if (!defined('BASE_URL')) {
+//     require_once __DIR__ . '/../config/constants.php';
+// }
 ?>
 <!DOCTYPE html>
 <html lang="fr" data-bs-theme="dark">
@@ -51,7 +51,7 @@ if (!defined('BASE_URL')) {
             <div class="container">
                 <a class="navbar-brand serpentard-logo text-light fs-3" href="<?= BASE_URL ?>">
                     <i class="fas fa-dragon me-2 text-warning"></i>Takalo-takalo
-                    <small class="d-block fs-6 text-muted"><?= PROJECT_NAME ?></small>
+                    <small class="d-block fs-6 text-muted">Takalo takalo</small>
                 </a>
                 
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
