@@ -12,14 +12,14 @@
     <title>Takalo-takalo - <?php echo $page_title ?? 'Accueil'; ?></title>
     
     <!-- Bootstrap 5 CSS local -->
-    <link href="<?= BASE_URL ?>/assets/lib/bootstrap-5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= BASE_URL ?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome local -->
-    <link href="<?= BASE_URL ?>/assets/lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="<?= BASE_URL ?>/assets/font-awesome/css/all.min.css" rel="stylesheet">
     
     <!-- Styles personnalisés -->
     <link href="<?= BASE_URL ?>/assets/css/serpentard.css" rel="stylesheet">
-    <link href="<?= BASE_URL ?>/assets/css/style.css" rel="stylesheet">
+
     
     <style>
         .serpentard-gradient {
