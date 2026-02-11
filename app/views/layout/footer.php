@@ -40,9 +40,9 @@
                         </p>
                         <p class="mb-1">
                             <span class="text-warning">Étudiants:</span><br>
-                            • Nom Prénom - ETUXXXXXX<br>
-                            • Nom Prénom - ETUXXXXXX<br>
-                            • Nom Prénom - ETUXXXXXX
+                            • Alexandre - ETU4339<br>
+                            • Chiu Tien - ETU3914<br>
+                            • Tsiky Christelle - ETU4225
                         </p>
                         <p class="mb-0 mt-2 small text-light-50">
                             Projet académique - Février 2026
