@@ -1,11 +1,11 @@
     </main>
 
-    <footer class="serpentard-gradient text-light py-4 mt-5 border-top border-warning">
+    <footer class="serdaigle-gradient text-light py-4 mt-5 border-top" style="border-color: #CD7F32 !important;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-warning">
-                        <i class="fas fa-dragon me-2"></i>Takalo-takalo
+                    <h5 class="text-bronze">
+                        <i class="fas fa-dove me-2"></i>Takalo-takalo
                     </h5>
                     <p class="text-light-50">
                         Plateforme d'échange d'objets entre utilisateurs.
@@ -19,7 +19,7 @@
                 </div>
                 
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-warning">Liens rapides</h5>
+                    <h5 class="text-bronze">Liens rapides</h5>
                     <ul class="list-unstyled">
                         <li><a href="<?= BASE_URL ?>/index.php" class="text-light-50 text-decoration-none">
                             <i class="fas fa-chevron-right me-2"></i>Accueil</a></li>
@@ -33,13 +33,13 @@
                 </div>
                 
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-warning">Membres du projet</h5>
+                    <h5 class="text-bronze">Membres du projet</h5>
                     <div class="bg-dark bg-opacity-50 p-3 rounded">
                         <p class="mb-1 text-light-50">
                             <strong>Takalo takalo</strong>
                         </p>
                         <p class="mb-1">
-                            <span class="text-warning">Étudiants:</span><br>
+                            <span class="text-bronze">Étudiants:</span><br>
                             • Alexandre - ETU4339<br>
                             • Chiu Tien - ETU3914<br>
                             • Tsiky Christelle - ETU4225
