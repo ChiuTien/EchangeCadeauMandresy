@@ -65,7 +65,7 @@
                 }
                 return $categorie;
             }
-            public function getAllCategorie() : array{
+            public function getAllCategories() : array{
                 try {
                     $sql = "SELECT * FROM categorie";
                     $stmt = $this->db->query($sql);
