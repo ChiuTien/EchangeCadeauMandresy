@@ -19,7 +19,7 @@ use Tracy\Debugger;
 
 
 /*********************************************
- *           Session Service Setup           *
+ *           //Session Service Setup           *
  *********************************************
  * To enable sessions in FlightPHP, register the session service.
  * Docs: https://docs.flightphp.com/awesome-plugins/session
