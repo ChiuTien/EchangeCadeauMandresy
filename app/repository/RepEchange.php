@@ -1,7 +1,7 @@
 <?php 
     namespace app\repository;
 
-    use app\model\Echange;
+    use app\models\Echange;
     use Flight;
     use PDO;
 

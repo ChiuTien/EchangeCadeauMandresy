@@ -1,8 +1,8 @@
 <?php
-$page_title = "Connexion";
-$active_page = "login";
-$page_css = "auth.css";
-$page_js = "auth.js";
+    $page_title = "Connexion";
+    $active_page = "login";
+    $page_css = "auth.css";
+    $page_js = "auth.js";
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +69,7 @@ $page_js = "auth.js";
                     <p class="text-light-50">Accédez à votre compte Takalo-takalo</p>
                 </div>
 
-                <form id="loginForm" method="POST" action="<?= BASE_URL ?>/includes/auth-process.php">
+                <form id="loginForm" action="accueil" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label text-light">
                             <i class="fas fa-user-circle me-2"></i>Nom d'utilisateur
@@ -93,20 +93,7 @@ $page_js = "auth.js";
                                 name="password"
                                 required
                                 placeholder="Votre mot de passe">
-                            <button class="btn" style="background: linear-gradient(135deg, #0E1A40, #222F5B); border: 2px solid #946B2D; color: #CD7F32;" type="button" id="togglePassword">
-                                <i class="fas fa-eye"></i>
-                            </button>
                         </div>
-                    </div>
-
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
-                        <label class="form-check-label text-light-50" for="rememberMe">
-                            Se souvenir de moi
-                        </label>
-                        <a href="<?= BASE_URL ?>/pages/forgot-password.php" class="float-end text-bronze">
-                            <i class="fas fa-question-circle me-1"></i>Mot de passe oublié ?
-                        </a>
                     </div>
 
                     <button type="submit" class="btn btn-serdaigle w-100 mb-3">

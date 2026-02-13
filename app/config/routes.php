@@ -1,9 +1,9 @@
 <?php
 
-use app\controllers\ApiExampleController;
-use app\middlewares\SecurityHeadersMiddleware;
-use flight\Engine;
-use flight\net\Router;
+	use app\middlewares\SecurityHeadersMiddleware;	
+	use flight\Engine;
+	use flight\net\Router;
+	use app\controllers\ControllerUser;
 
 /** 
  * @var Router $router 
@@ -17,19 +17,19 @@ $router->group('', function(Router $router) use ($app) {
 		$app->render('login');
 	});
 
-	$router->get('/register',function() use ($app) {
-		$app->render('register');
-	});
-	
+	$router->post('/accueil', function() use ($app) {
+		$nom = $_POST['username'];
+		$mdp = $_POST['password'];
 
-	$router->get('/hello-world/@name', function($name) {
-		echo '<h1>Hello world! Oh hey '.$name.'!</h1>';
-	});
+		if(empty($nom) || empty($mdp)) {
+			$app->flash('error', 'Veuillez remplir tous les champs.');
+			$app->redirect('/');
+		} else {
+			// $controllerUser = new ControllerUser();
+			// $users = $controllerUser->listUser();
+		}
 
-	$router->group('/api', function() use ($router) {
-		$router->get('/users', [ ApiExampleController::class, 'getUsers' ]);
-		$router->get('/users/@id:[0-9]', [ ApiExampleController::class, 'getUser' ]);
-		$router->post('/users/@id:[0-9]', [ ApiExampleController::class, 'updateUser' ]);
+		$app->render('accueil', ['nom' => $nom, 'mdp' => $mdp]);
 	});
 	
 }, [ SecurityHeadersMiddleware::class ]);
