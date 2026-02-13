@@ -49,7 +49,9 @@
         }
     </style>
 </head>
+
 <body class="bg-dark text-light">
+
     <header class="sticky-top shadow-lg">
         <nav class="navbar navbar-expand-lg serdaigle-nav py-3">
             <div class="container">
@@ -130,5 +132,4 @@
             </div>
         </nav>
     </header>
-
-    <main class="container py-4"></main>
+<?php //J'ai mis ca parcequ'il y a du rouge ?>
